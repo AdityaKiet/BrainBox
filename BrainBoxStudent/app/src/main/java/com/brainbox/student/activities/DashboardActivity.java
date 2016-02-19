@@ -3,6 +3,7 @@ package com.brainbox.student.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,9 +14,17 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.brainbox.student.R;
+import com.brainbox.student.dashboard_fragments.AbsentNoteFragment;
 import com.brainbox.student.dashboard_fragments.CalenderFragment;
 import com.brainbox.student.dashboard_fragments.DashboardFragment;
-import com.brainbox.student.global.BrainBox;
+import com.brainbox.student.dashboard_fragments.EventsFragment;
+import com.brainbox.student.dashboard_fragments.FeedbackFragment;
+import com.brainbox.student.dashboard_fragments.GroupsFragment;
+import com.brainbox.student.dashboard_fragments.LostNFoundFragment;
+import com.brainbox.student.dashboard_fragments.MapsFragment;
+import com.brainbox.student.dashboard_fragments.PayFeeFragment;
+import com.brainbox.student.dashboard_fragments.SettingsFragment;
+import com.brainbox.student.ui.CustomTitle;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -63,7 +72,7 @@ public class DashboardActivity extends AppCompatActivity {
                 previousMenuItem = menuItem;
 
                 drawerLayout.closeDrawers();
-
+                android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 switch (menuItem.getItemId()) {
                     case R.id.dashboard:
                         Intent intent = new Intent(DashboardActivity.this, DashboardActivity.class);
@@ -71,6 +80,10 @@ public class DashboardActivity extends AppCompatActivity {
                         finish();
                         return true;
 
+                    case R.id.myProfile:
+                        Intent intent2 = new Intent(DashboardActivity.this, ProfileActivity.class);
+                        startActivity(intent2);
+                        return true;
 
                     case R.id.policies:
                         Intent intent1 = new Intent(DashboardActivity.this, PoliciesActivity.class);
@@ -79,10 +92,67 @@ public class DashboardActivity extends AppCompatActivity {
 
                     case R.id.calender:
                         CalenderFragment calenderFragment = new CalenderFragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.frame, calenderFragment);
                         fragmentTransaction.commit();
+                        getSupportActionBar().setTitle(CustomTitle.getTitle(DashboardActivity.this, getString(R.string.calender)));
                         return true;
+
+                    case R.id.absentNote:
+                        AbsentNoteFragment absentNoteFragment = new AbsentNoteFragment();
+                        fragmentTransaction.replace(R.id.frame, absentNoteFragment);
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle(CustomTitle.getTitle(DashboardActivity.this, getString(R.string.absent_note)));
+                        return true;
+
+                    case R.id.feedback:
+                        FeedbackFragment feedbackFragment = new FeedbackFragment();
+                        fragmentTransaction.replace(R.id.frame, feedbackFragment);
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle(CustomTitle.getTitle(DashboardActivity.this, getString(R.string.feedback)));
+                        return true;
+
+                    case R.id.maps:
+                        MapsFragment mapFragment = new MapsFragment();
+                        fragmentTransaction.replace(R.id.frame, mapFragment);
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle(CustomTitle.getTitle(DashboardActivity.this, getString(R.string.maps)));
+                       return true;
+
+                    case R.id.feesPayment:
+                        PayFeeFragment payFeeFragment = new PayFeeFragment();
+                        fragmentTransaction.replace(R.id.frame, payFeeFragment);
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle(CustomTitle.getTitle(DashboardActivity.this, getString(R.string.fees_payment)));
+                        return true;
+
+                    case R.id.lost_n_found:
+                        LostNFoundFragment lostNFoundFragment = new LostNFoundFragment();
+                        fragmentTransaction.replace(R.id.frame, lostNFoundFragment);
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle(CustomTitle.getTitle(DashboardActivity.this, getString(R.string.lost_n_found)));
+                        return true;
+
+                    case R.id.events:
+                        EventsFragment eventsFragment = new EventsFragment();
+                        fragmentTransaction.replace(R.id.frame, eventsFragment);
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle(CustomTitle.getTitle(DashboardActivity.this, getString(R.string.events)));
+                        return true;
+
+                    case R.id.groups:
+                        GroupsFragment groupsFragment = new GroupsFragment();
+                        fragmentTransaction.replace(R.id.frame, groupsFragment);
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle(CustomTitle.getTitle(DashboardActivity.this, getString(R.string.groups)));
+                        return true;
+
+                    case R.id.settings:
+                        SettingsFragment settingsFragment = new SettingsFragment();
+                        fragmentTransaction.replace(R.id.frame, settingsFragment);
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle(CustomTitle.getTitle(DashboardActivity.this, getString(R.string.action_settings)));
+                        return true;
+
 
                     /*case R.id.starred:
                         Toast.makeText(getApplicationContext(), "Stared Selected", Toast.LENGTH_SHORT).show();
@@ -219,23 +289,28 @@ public class DashboardActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.action_settings:
-
+            case R.id.action_notifications:
+                Intent intent = new Intent(this, NotificationsActivity.class);
+                startActivity(intent);
                 break;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    /*@Override
-    public void onBackPressed() {
-        if (null == BrainBox.currentFragment)
-            finish();
-        else if (!(BrainBox.currentFragment instanceof DashboardFragment)) {
+
+    @Override
+    public void onBackPressed()
+    {
+        Fragment f = getSupportFragmentManager().findFragmentById(R.id.frame);
+
+        if(f instanceof DashboardFragment)
+            super.onBackPressed();
+        else{
             Intent intent = new Intent(DashboardActivity.this, DashboardActivity.class);
             startActivity(intent);
             finish();
-        } else
-            super.onBackPressed();
-    }*/
+        }
+
+    }
 }

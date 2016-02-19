@@ -143,6 +143,6 @@ public class NewsFeedFragment extends Fragment{
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("News Feed");
+//        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("News Feed");
     }
 }

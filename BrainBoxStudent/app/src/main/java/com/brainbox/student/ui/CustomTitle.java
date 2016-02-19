@@ -13,4 +13,10 @@ public class CustomTitle {
         s.setSpan(new com.brainbox.student.ui.TypefaceSpan(context, "Whitney-Semibold-Bas.otf"), 0, s.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         return s;
     }
+
+    public static SpannableString getPlainTitle(Context context, String title){
+        SpannableString s = new SpannableString(title);
+        s.setSpan(new com.brainbox.student.ui.TypefaceSpan(context, "Whitney-Book-Bas.otf"), 0, s.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        return s;
+    }
 }

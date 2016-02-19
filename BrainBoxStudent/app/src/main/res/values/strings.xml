@@ -1,51 +1,93 @@
 <resources>
-    <string name="app_name">BrainBox Student</string>
+	<string name="app_name">BrainBox Student</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_dashboard">DashboardActivity</string>
-    <string name="notifications">Notifications</string>
-    <string name="title_activity_pdfdisplay">PDFDisplayActivity</string>
-    <string name="dashboard">Dashboard</string>
-    <string name="news_feed">News Feed</string>
-    <string name="elibrary">E - Library</string>
-    <string name="classroom">Classroom</string>
-    <string name="more">More</string>
+	<string name="hello_world">Hello world!</string>
+	<string name="action_settings">Settings</string>
+	<string name="title_activity_dashboard">DashboardActivity</string>
+	<string name="notifications">Notifications</string>
+	<string name="title_activity_pdfdisplay">PDFDisplayActivity</string>
+	<string name="dashboard">Dashboard</string>
+	<string name="news_feed">News Feed</string>
+	<string name="elibrary">E - Library</string>
+	<string name="classroom">Classroom</string>
+	<string name="more">More</string>
 
-    <string name="myprofile">My Profile</string>
-    <string name="teachers">Teachers</string>
-    <string name="student">Student</string>
-    <string name="classes">Classes</string>
-    <string name="fees_payment">Fees Payment</string>
-    <string name="absent_note">Absent Note</string>
+	<string name="myprofile">My Profile</string>
+	<string name="teachers">Teachers</string>
+	<string name="student">Student</string>
+	<string name="classes">Classes</string>
+	<string name="fees_payment">Fee Payment</string>
+	<string name="absent_note">Absent Note</string>
+	<string name="absent_note_reason">Absent Reason .....</string>
+	<string name="submit">Submit</string>
+	<string name="no_notifications">No Notifications</string>
+	<string name="no_notifications_disc">We will notify you once we have something for you</string>
+
+	<string name="add_option">Add Payment Option</string>
+	<string name="no_payment_option">No Payment Option</string>
+	<string name="no_payment_option_disc">Add your debit or credit card to pay fee online</string>
+
+	<string name="no_lost_n_found">No Item Found</string>
+	<string name="no_lost_n_found_disc">No lost item has been listed here</string>
+	<string name="refresh">Refresh</string>
 
 
-    <string name="staff">Staff</string>
-    <string name="calender">Calender</string>
-    <string name="events">Events</string>
-    <string name="gallery">Gallery</string>
-    <string name="groups">Groups</string>
+	<string name="et_feedback_hint">Please write your feedback</string>
+	<string name="subject">Subject</string>
 
-    <string name="forms">Forms</string>
-    <string name="lost_n_found">Lost and Found</string>
-    <string name="advertise">Advertise</string>
-    <string name="contact_us">Contact SkulApp</string>
+	<string name="staff">Staff</string>
+	<string name="calender">Calender</string>
+	<string name="events">Events</string>
+	<string name="gallery">Gallery</string>
+	<string name="groups">Groups</string>
 
-    <string name="feedback">Feedback Form</string>
-    <string name="policies">Policies</string>
-    <string name="maps">Maps</string>
+	<string name="reason">Reason for absence</string>
+	<string name="forms">Forms</string>
+	<string name="lost_n_found">Lost and Found</string>
+	<string name="advertise">Advertise</string>
+	<string name="contact_us">Contact SkulApp</string>
 
-    <string name="closeDrawer">Navigation View</string>
-    <string name="openDrawer">Navigation View Closed</string>
+	<string name="feedback">Feedback Form</string>
+	<string name="policies">Policies</string>
+	<string name="maps">Maps</string>
 
-    <string-array name="dashbaord">
-        <item>@string/news_feed</item>
-        <item>@string/elibrary</item>
-        <item>@string/classroom</item>
-        <item>@string/gallery</item>
-        <item>@string/more</item>
-    </string-array>
+	<string name="closeDrawer">Navigation View</string>
+	<string name="openDrawer">Navigation View Closed</string>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+	<string-array name="dashbaord">
+		<item>@string/news_feed</item>
+		<item>@string/elibrary</item>
+		<item>@string/classroom</item>
+		<item>@string/gallery</item>
+		<item>@string/more</item>
+	</string-array>
+
+
+	<string name="fever">Fever</string>
+	<string name="marriage">Marriage</string>
+	<string name="rainy_day">Rainy Day</string>
+	<string name="accident">Accident</string>
+	<string name="death">Death</string>
+
+	<string-array name="reasons_absent">
+		<item>@string/fever</item>
+		<item>@string/marriage</item>
+		<item>@string/rainy_day</item>
+		<item>@string/accident</item>
+		<item>@string/death</item>
+	</string-array>
+
+
+	<string name="complain">Complain</string>
+	<string name="advise">Advise</string>
+
+	<string-array name="subject_feedback">
+		<item>@string/complain</item>
+		<item>@string/advise</item>
+		<item>@string/rainy_day</item>
+		<item>@string/accident</item>
+		<item>@string/death</item>
+	</string-array>
+
+	<string name="title_activity_notifications">NotificationsActivity</string>
 </resources>

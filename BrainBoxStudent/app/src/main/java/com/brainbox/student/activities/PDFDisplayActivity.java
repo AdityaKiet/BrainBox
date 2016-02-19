@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.brainbox.student.R;
 import com.brainbox.student.dto.LibraryItemDTO;
@@ -32,11 +33,12 @@ public class PDFDisplayActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(CustomTitle.getTitle(this, libraryItemDTO.getName()));
-
+        webView.setWebViewClient(new MyWebViewClient());
         webView.getSettings().setJavaScriptEnabled(true); // enable javascript
 
         webView.loadUrl("http://drive.google.com/viewerng/viewer?embedded=true&url=" + libraryItemDTO.getLink());
 
+      //  webView.loadUrl("http://www.brainboxapp.com/school");
 
         toolbar.setNavigationIcon(R.mipmap.abc_ic_ab_back_mtrl_am_alpha);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -46,5 +48,15 @@ public class PDFDisplayActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private class MyWebViewClient extends WebViewClient
+    {
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return false;
+        }
     }
 }

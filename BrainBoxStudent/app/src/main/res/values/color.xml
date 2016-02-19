@@ -7,6 +7,7 @@
     <color name="accent">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
+    <color name="red">#ff0000</color>
     <color name="tab_black">#1d2127</color>
 
     <color name="grey_white">#f2f2f2</color>
@@ -27,5 +28,6 @@
     <color name="timestamp">#a0a3a7</color>
 
     <color name="heading_background">#f4f4f4</color>
+    <color name="item_divider">#B6B6B6</color>
 
 </resources>
