@@ -7,7 +7,7 @@
             android:id="@+id/dashboard"
             android:checked="false"
             android:icon="@mipmap/ub__home_icon"
-            android:title="@string/dashboard" />
+            android:title="@string/news_feed" />
         <item
             android:id="@+id/myProfile"
             android:icon="@mipmap/abc_dr_menu_name_mtrl_am_alpha"

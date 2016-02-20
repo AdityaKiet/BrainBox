@@ -1,5 +1,7 @@
 package com.brainbox.student.dashboard_fragments;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,12 +10,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
+import com.brainbox.student.MainActivity;
 import com.brainbox.student.R;
+import com.brainbox.student.ui.CustomTypeFace;
 import com.brainbox.student.ui.button.ButtonPlus;
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
+
+import java.util.Calendar;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import fr.ganfra.materialspinner.MaterialSpinner;
 
 /**
@@ -27,6 +36,28 @@ public class AbsentNoteFragment extends Fragment
 	@Bind(R.id.btnSubmitAbsent)
 	ButtonPlus btnSubmitAbsent;
 	private String[] reasons;
+	@Bind(R.id.txtAbsentDate)
+	TextView txtAbsentDate;
+	@OnClick(R.id.txtAbsentDate) void absentDate(){
+		Calendar now = Calendar.getInstance();
+		DatePickerDialog dpd = DatePickerDialog.newInstance(
+				new DatePickerDialog.OnDateSetListener()
+				{
+					@Override
+					public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth)
+					{
+						String date = "Absent Date : "+dayOfMonth+"/"+(++monthOfYear)+"/"+year;
+						txtAbsentDate.setText(date);
+					}
+				},
+				now.get(Calendar.YEAR),
+				now.get(Calendar.MONTH),
+				now.get(Calendar.DAY_OF_MONTH)
+		);
+		dpd.dismissOnPause(true);
+		dpd.setTitle("Absent Date");
+		dpd.show(getActivity().getFragmentManager(), "Datepickerdialog");
+	}
 
 
 
@@ -50,5 +81,8 @@ public class AbsentNoteFragment extends Fragment
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, reasons);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		materialSpinner.setAdapter(adapter);
+
+		Typeface typeface = CustomTypeFace.getTypeface(getActivity());
+		txtAbsentDate.setTypeface(typeface);
 	}
 }

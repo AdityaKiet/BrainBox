@@ -11,6 +11,8 @@
 	<string name="elibrary">E - Library</string>
 	<string name="classroom">Classroom</string>
 	<string name="more">More</string>
+	<string name="add_date">Add Date</string>
+	<string name="search">Search</string>
 
 	<string name="myprofile">My Profile</string>
 	<string name="teachers">Teachers</string>
@@ -50,6 +52,7 @@
 	<string name="feedback">Feedback Form</string>
 	<string name="policies">Policies</string>
 	<string name="maps">Maps</string>
+	<string name="timeline">Timeline</string>
 
 	<string name="closeDrawer">Navigation View</string>
 	<string name="openDrawer">Navigation View Closed</string>
@@ -59,7 +62,7 @@
 		<item>@string/elibrary</item>
 		<item>@string/classroom</item>
 		<item>@string/gallery</item>
-		<item>@string/more</item>
+		<item>@string/timeline</item>
 	</string-array>
 
 
@@ -87,6 +90,13 @@
 		<item>@string/rainy_day</item>
 		<item>@string/accident</item>
 		<item>@string/death</item>
+	</string-array>
+
+	<string name="camera">Camera</string>
+
+	<string-array name="pick_image">
+		<item>@string/camera</item>
+		<item>@string/gallery</item>
 	</string-array>
 
 	<string name="title_activity_notifications">NotificationsActivity</string>

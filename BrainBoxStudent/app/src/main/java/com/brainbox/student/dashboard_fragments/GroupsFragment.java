@@ -1,17 +1,22 @@
 package com.brainbox.student.dashboard_fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.brainbox.student.MainActivity;
 import com.brainbox.student.R;
+import com.brainbox.student.activities.NotificationsActivity;
 import com.brainbox.student.adapter.FeedListAdapter;
 import com.brainbox.student.adapter.GroupsAdapter;
 import com.brainbox.student.dto.FeedItem;
@@ -50,6 +55,7 @@ public class GroupsFragment extends Fragment
 		ButterKnife.bind(this, parentView);
 		BrainBox.currentFragment = this;
 
+	//	setHasOptionsMenu(true);
 		populate();
 		return parentView;
 	}
@@ -96,9 +102,19 @@ public class GroupsFragment extends Fragment
 
 	}
 
-	@Override
-	public void onAttach(Context context) {
-		super.onAttach(context);
-//        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("News Feed");
+/*	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		inflater.inflate(R.menu.menu_dashboard, menu);
+		super.onCreateOptionsMenu(menu, inflater);
 	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		if(item.getItemId() == R.id.action_notifications){
+			Intent intent = new Intent(getActivity(), NotificationsActivity.class);
+			startActivity(intent);
+		}
+		return super.onOptionsItemSelected(item);
+	}*/
 }

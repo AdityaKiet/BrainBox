@@ -78,8 +78,8 @@ public class DashboardFragment extends Fragment {
         adapter.addFragment(new NewsFeedFragment(), "News Feed");
         adapter.addFragment(new ELibraryFragment(), "E - Library");
         adapter.addFragment(new ClassroomFragment(), "Classroom");
-        adapter.addFragment(new OneFragment(), "Gallery");
-        adapter.addFragment(new OneFragment(), "More");
+        adapter.addFragment(new GalleryFragment(), "Gallery");
+        adapter.addFragment(new TimelineFragment(), "Timeline");
         viewPager.setAdapter(adapter);
     }
 

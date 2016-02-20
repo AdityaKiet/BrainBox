@@ -43,6 +43,13 @@
 		android:padding="10dp"
 		android:singleLine="false"/>
 
+	<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/txtAbsentDate"
+			  android:gravity="center"
+			  android:layout_marginTop="15dp"
+			  android:clickable="true"
+			  android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+			  android:textColor="@color/primary"
+		android:layout_gravity="center" android:text="@string/add_date"/>
 	<com.brainbox.student.ui.button.ButtonPlus
 		android:id="@+id/btnSubmitAbsent"
 		android:layout_marginLeft="25dp"

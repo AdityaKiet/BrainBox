@@ -27,7 +27,10 @@
     <color name="link">#0a80d1</color>
     <color name="timestamp">#a0a3a7</color>
 
-    <color name="heading_background">#f4f4f4</color>
+    <color name="heading_background">#e0e1e3</color>
     <color name="item_divider">#B6B6B6</color>
+
+    <color name="frame">@android:color/black</color>
+    <color name="inset">#9000</color>
 
 </resources>

@@ -15,52 +15,81 @@ public class ClassroomList {
 
         ClassroomListDTO classroomListDTO = new ClassroomListDTO();
         classroomListDTO.setIsHeading(true);
-        classroomListDTO.setText("Academics");
         classroomListDTOs.add(classroomListDTO);
 
         classroomListDTO = new ClassroomListDTO();
         classroomListDTO.setIsHeading(false);
-        classroomListDTO.setText("Academics");
+        classroomListDTO.setText("Home Work");
         classroomListDTOs.add(classroomListDTO);
 
         classroomListDTO = new ClassroomListDTO();
         classroomListDTO.setIsHeading(false);
-        classroomListDTO.setText("Academics");
+        classroomListDTO.setText("Test & Grades");
         classroomListDTOs.add(classroomListDTO);
 
         classroomListDTO = new ClassroomListDTO();
         classroomListDTO.setIsHeading(false);
-        classroomListDTO.setText("Academics");
+        classroomListDTO.setText("Attendence");
         classroomListDTOs.add(classroomListDTO);
 
         classroomListDTO = new ClassroomListDTO();
         classroomListDTO.setIsHeading(false);
-        classroomListDTO.setText("Academics");
+        classroomListDTO.setText("Course Progress");
+        classroomListDTOs.add(classroomListDTO);
+
+        classroomListDTO = new ClassroomListDTO();
+        classroomListDTO.setIsHeading(false);
+        classroomListDTO.setText("Time Table");
+        classroomListDTOs.add(classroomListDTO);
+
+
+        classroomListDTO = new ClassroomListDTO();
+        classroomListDTO.setIsHeading(true);
+        classroomListDTOs.add(classroomListDTO);
+
+
+        classroomListDTO = new ClassroomListDTO();
+        classroomListDTO.setIsHeading(false);
+        classroomListDTO.setText("Reports");
+        classroomListDTOs.add(classroomListDTO);
+
+        classroomListDTO = new ClassroomListDTO();
+        classroomListDTO.setIsHeading(false);
+        classroomListDTO.setText("Certificates");
         classroomListDTOs.add(classroomListDTO);
 
         classroomListDTO = new ClassroomListDTO();
         classroomListDTO.setIsHeading(true);
-        classroomListDTO.setText("Academics");
         classroomListDTOs.add(classroomListDTO);
 
+        classroomListDTO = new ClassroomListDTO();
+        classroomListDTO.setIsHeading(false);
+        classroomListDTO.setText("Teacher Contacts");
+        classroomListDTOs.add(classroomListDTO);
+
+        classroomListDTO = new ClassroomListDTO();
+        classroomListDTO.setIsHeading(false);
+        classroomListDTO.setText("Workshops");
+        classroomListDTOs.add(classroomListDTO);
+
+        classroomListDTO = new ClassroomListDTO();
+        classroomListDTO.setIsHeading(false);
+        classroomListDTO.setText("Review");
+        classroomListDTOs.add(classroomListDTO);
 
         classroomListDTO = new ClassroomListDTO();
         classroomListDTO.setIsHeading(true);
-        classroomListDTO.setText("Academics");
-        classroomListDTOs.add(classroomListDTO);
-
-
-        classroomListDTO = new ClassroomListDTO();
-        classroomListDTO.setIsHeading(false);
-        classroomListDTO.setText("Academics");
         classroomListDTOs.add(classroomListDTO);
 
         classroomListDTO = new ClassroomListDTO();
         classroomListDTO.setIsHeading(false);
-        classroomListDTO.setText("Academics");
+        classroomListDTO.setText("Class group chat");
         classroomListDTOs.add(classroomListDTO);
 
-
+        classroomListDTO = new ClassroomListDTO();
+        classroomListDTO.setIsHeading(false);
+        classroomListDTO.setText("PTA Slots");
+        classroomListDTOs.add(classroomListDTO);
 
         return classroomListDTOs;
     }

@@ -5,6 +5,7 @@ package com.brainbox.student.global;
  */
 
 import android.app.Application;
+import android.content.Context;
 import android.text.TextUtils;
 
 import com.android.volley.Request;
@@ -16,6 +17,7 @@ import com.brainbox.student.util.LruBitmapCache;
 public class AppController extends Application {
 
     public static final String TAG = AppController.class.getSimpleName();
+    private static Context mContext;
 
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
@@ -27,6 +29,12 @@ public class AppController extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
+        mContext = getApplicationContext();
+    }
+
+
+    public static Context getAppContext() {
+        return mContext;
     }
 
     public static synchronized AppController getInstance() {

@@ -23,14 +23,13 @@ public class ClassroomListAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
     private List<ClassroomListDTO> classroomListDTOs;
-    private Typeface typeface, boldTypeface;
+    private Typeface typeface;
 
 
     public ClassroomListAdapter(Context context, List<ClassroomListDTO> classroomListDTOs) {
         this.context = context;
         this.classroomListDTOs = classroomListDTOs;
         typeface = CustomTypeFace.getTypeface(context);
-        boldTypeface = CustomTypeFace.getBoldTypeface(context);
     }
 
     @Override
@@ -58,16 +57,11 @@ public class ClassroomListAdapter extends BaseAdapter {
 
         if(item.getIsHeading()){
             convertView = inflater.inflate(R.layout.single_row_classroom_heading, null);
-            TextView txtHeading = (TextView) convertView.findViewById(R.id.txtClassroomHeading);
-            txtHeading.setTypeface(typeface);
-            txtHeading.setText(item.getText());
         }else{
             convertView = inflater.inflate(R.layout.single_row_classroom_value, null);
             TextView txtValue = (TextView) convertView.findViewById(R.id.txtClassroomValue);
             txtValue.setTypeface(typeface);
             txtValue.setText(item.getText());
-            ImageView imgBook = (ImageView) convertView.findViewById(R.id.imgClassroom);
-            imgBook.setImageResource(R.mipmap.ic_launcher);
         }
 
 

@@ -1,15 +1,20 @@
 package com.brainbox.student.dashboard_fragments;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.brainbox.student.R;
+import com.brainbox.student.activities.NotificationsActivity;
 import com.brainbox.student.ui.CustomTitle;
 import com.brainbox.student.ui.button.ButtonPlus;
 
@@ -34,6 +39,7 @@ public class PayFeeFragment extends Fragment
 	{
 		parentView = inflater.inflate(R.layout.fragment_fee_payment, container, false);
 
+		// setHasOptionsMenu(true);
 		populate();
 		return parentView;
 	}
@@ -47,4 +53,20 @@ public class PayFeeFragment extends Fragment
 		txtNoPaymentOption.setText(CustomTitle.getTitle(getActivity(), getString(R.string.no_payment_option)));
 		txtNoPaymentOptionDisc.setText(CustomTitle.getPlainTitle(getActivity(), getString(R.string.no_payment_option_disc)));
 	}
+
+	/*@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		inflater.inflate(R.menu.menu_dashboard, menu);
+		super.onCreateOptionsMenu(menu, inflater);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		if(item.getItemId() == R.id.action_notifications){
+			Intent intent = new Intent(getActivity(), NotificationsActivity.class);
+			startActivity(intent);
+		}
+		return super.onOptionsItemSelected(item);
+	}*/
 }

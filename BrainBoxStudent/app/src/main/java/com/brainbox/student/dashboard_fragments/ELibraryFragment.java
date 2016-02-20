@@ -3,6 +3,9 @@ package com.brainbox.student.dashboard_fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -31,6 +34,7 @@ public class ELibraryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         parentView = inflater.inflate(R.layout.fragment_library, container, false);
+      //  setHasOptionsMenu(true);
         ButterKnife.bind(this, parentView);
         BrainBox.currentFragment = this;
         populate();
@@ -44,7 +48,7 @@ public class ELibraryFragment extends Fragment {
 
         LibraryItemDTO libraryItemDTO = new LibraryItemDTO();
         libraryItemDTO.setName("New Vishal's Plant Pathology\nBy - K.S. Hooda");
-        libraryItemDTO.setImageLink(R.drawable.list_plants);
+        libraryItemDTO.setImageLink(R.drawable.book);
         libraryItemDTO.setLink("http://www.adobe.com/devnet/acrobat/pdfs/pdf_open_parameters.pdf");
 
         libraryItemDTOs.add(libraryItemDTO);
@@ -81,4 +85,21 @@ public class ELibraryFragment extends Fragment {
         LibraryListAdapter libraryListAdapter = new LibraryListAdapter(getActivity(), libraryItemDTOs);
         listLibrary.setAdapter(libraryListAdapter);
     }
+
+   /* @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_pdf_fragment, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		if(item.getItemId() == R.id.action_notifications){
+
+		} else if(item.getItemId() == R.id.action_search){
+
+		}
+		return super.onOptionsItemSelected(item);
+	}*/
 }
