@@ -9,6 +9,7 @@ import android.widget.GridView;
 
 import com.brainbox.student.R;
 import com.brainbox.student.adapter.GalleryGridAdapter;
+import com.brainbox.student.global.BrainBox;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -61,7 +62,7 @@ public class GalleryFragment extends Fragment
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		parentView = inflater.inflate(R.layout.fragment_gallery, container, false);
 		ButterKnife.bind(this, parentView);
-
+		BrainBox.currentFragment = this;
 
 		populate();
 		return parentView;

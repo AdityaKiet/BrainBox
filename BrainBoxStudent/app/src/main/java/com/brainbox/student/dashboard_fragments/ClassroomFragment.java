@@ -10,6 +10,7 @@ import com.brainbox.student.R;
 import com.brainbox.student.adapter.ClassroomListAdapter;
 import com.brainbox.student.dashboard.ClassroomList;
 import com.brainbox.student.dto.ClassroomListDTO;
+import com.brainbox.student.global.BrainBox;
 import com.nirhart.parallaxscroll.views.ParallaxListView;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class ClassroomFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         parentView =  inflater.inflate(R.layout.fragment_classroom, container, false);
         ButterKnife.bind(this, parentView);
-
+        BrainBox.currentFragment = this;
         populate();
         return parentView;
     }

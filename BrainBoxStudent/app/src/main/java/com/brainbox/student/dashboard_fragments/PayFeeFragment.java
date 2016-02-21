@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.brainbox.student.R;
 import com.brainbox.student.activities.NotificationsActivity;
+import com.brainbox.student.global.BrainBox;
 import com.brainbox.student.ui.CustomTitle;
 import com.brainbox.student.ui.button.ButtonPlus;
 
@@ -38,7 +39,7 @@ public class PayFeeFragment extends Fragment
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		parentView = inflater.inflate(R.layout.fragment_fee_payment, container, false);
-
+		BrainBox.currentFragment = this;
 		// setHasOptionsMenu(true);
 		populate();
 		return parentView;

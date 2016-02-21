@@ -41,7 +41,7 @@ public class SettingsFragment extends Fragment {
         ButterKnife.bind(this, parentView);
         BrainBox.currentFragment = this;
 
-
+        BrainBox.currentFragment = this;
         populate();
         return parentView;
     }

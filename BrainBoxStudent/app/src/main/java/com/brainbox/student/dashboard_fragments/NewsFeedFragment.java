@@ -66,13 +66,14 @@ public class NewsFeedFragment extends Fragment{
     }
 
     private void populate() {
+        int displayHeight = getActivity().getWindowManager().getDefaultDisplay().getHeight();
 
         TextView v = new TextView(getActivity());
         v.setText("Welcome !\nAditya Agrawal");
         v.setGravity(Gravity.CENTER);
         v.setTextSize(30);
         v.setTextColor(Color.WHITE);
-        v.setHeight(350);
+        v.setHeight(displayHeight / 3);
         v.setBackgroundResource(R.drawable.school);
 
         listNewsFeed.addParallaxedHeaderView(v);

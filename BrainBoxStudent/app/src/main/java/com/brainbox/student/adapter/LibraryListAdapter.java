@@ -20,6 +20,7 @@ import com.brainbox.student.activities.PDFDisplayActivity;
 import com.brainbox.student.dto.LibraryItemDTO;
 import com.brainbox.student.ui.CustomTypeFace;
 import com.google.gson.Gson;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -28,6 +29,8 @@ public class LibraryListAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private List<LibraryItemDTO> feedItems;
     private Typeface typeface;
+    private String url1 = "http://ecx.images-amazon.com/images/I/417aKIs9O6L._AC_UL320_SR248,320_.jpg",
+            url2 = "https://pmsofmatt.files.wordpress.com/2011/05/ap-bio-book-cover.jpg";
 
     public LibraryListAdapter(Context context, List<LibraryItemDTO> feedItems) {
         this.context = context;
@@ -66,11 +69,17 @@ public class LibraryListAdapter extends BaseAdapter {
 
         final LibraryItemDTO item = feedItems.get(position);
         bookName.setText(item.getName());
-        imgBook.setImageResource(item.getImageLink());
+        if(position % 2 == 0)
+            Picasso.with(context).load(url1).error(R.drawable.ic_launcher).into(imgBook);
+        else
+            Picasso.with(context).load(url2).error(R.drawable.ic_launcher).into(imgBook);
+       // imgBook.setImageResource(item.getImageLink());
 
-        convertView.setOnClickListener(new View.OnClickListener() {
+        convertView.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 Intent intent = new Intent(context, PDFDisplayActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("item", new Gson().toJson(item));

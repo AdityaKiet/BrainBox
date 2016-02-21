@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.brainbox.student.MainActivity;
 import com.brainbox.student.R;
+import com.brainbox.student.global.BrainBox;
 import com.brainbox.student.ui.CustomTypeFace;
 import com.brainbox.student.ui.button.ButtonPlus;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
@@ -67,6 +68,7 @@ public class AbsentNoteFragment extends Fragment
 	{
 		parentView = inflater.inflate(R.layout.fragment_absent_note, container, false);
 
+		BrainBox.currentFragment = this;
 		populate();
 		return parentView;
 	}

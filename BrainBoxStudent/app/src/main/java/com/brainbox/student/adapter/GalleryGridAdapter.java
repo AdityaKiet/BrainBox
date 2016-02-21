@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.brainbox.student.R;
 import com.brainbox.student.ui.CustomTypeFace;
 import com.brainbox.student.ui.SquareImageView;
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by adityaagrawal on 20/02/16.
@@ -20,6 +21,8 @@ public class GalleryGridAdapter extends BaseAdapter {
     private final String[] web;
     private final int[] Imageid;
     private Typeface typeface;
+    private String url = "http://images.indianexpress.com/2015/08/virat-kohli-pti_m.jpg";
+	private String url1 = "http://s3.india.com/wp-content/uploads/2014/04/sachin-tendulkar1.jpg";
 
     public GalleryGridAdapter(Context c, String[] web, int[] Imageid) {
         mContext = c;
@@ -54,8 +57,11 @@ public class GalleryGridAdapter extends BaseAdapter {
             TextView textView = (TextView) grid.findViewById(R.id.grid_text);
             SquareImageView imageView = (SquareImageView) grid.findViewById(R.id.grid_image);
             textView.setText(web[position]);
-            imageView.setImageResource(Imageid[position]);
-            textView.setTypeface(typeface);
+			if(position % 2 == 0)
+				Picasso.with(mContext).load(url1).error(R.drawable.ic_launcher).into(imageView);
+            else
+				Picasso.with(mContext).load(url).error(R.drawable.ic_launcher).into(imageView);
+			textView.setTypeface(typeface);
         } else {
             grid =  convertView;
         }

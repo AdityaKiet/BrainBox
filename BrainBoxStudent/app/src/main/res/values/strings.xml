@@ -23,6 +23,7 @@
 	<string name="absent_note_reason">Absent Reason .....</string>
 	<string name="submit">Submit</string>
 	<string name="no_notifications">No Notifications</string>
+	<string name="common_google_play_services_install_text_phone" >Brainbox won\'t run without Google Play services, which are missing from your phone.</string>
 	<string name="no_notifications_disc">We will notify you once we have something for you</string>
 
 	<string name="add_option">Add Payment Option</string>

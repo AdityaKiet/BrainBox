@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 
 import com.brainbox.student.R;
 import com.brainbox.student.activities.NotificationsActivity;
+import com.brainbox.student.global.BrainBox;
 import com.brainbox.student.ui.button.ButtonPlus;
 
 import butterknife.Bind;
@@ -40,6 +41,7 @@ public class FeedbackFragment extends Fragment
 	{
 		parentView = inflater.inflate(R.layout.fragment_feedback, container, false);
 	//	setHasOptionsMenu(true);
+		BrainBox.currentFragment = this;
 		populate();
 		return parentView;
 	}

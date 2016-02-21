@@ -44,7 +44,7 @@ dependencies {
 		transitive = true
 	}
 	compile 'com.jpardogo.listbuddies:library:1.1.1'
-	compile 'com.squareup.picasso:picasso:2.3.3'
+	compile 'com.squareup.picasso:picasso:2.5.2'
 }
 repositories {
 	maven { url "https://jitpack.io" }

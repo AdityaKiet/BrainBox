@@ -24,6 +24,7 @@ import com.brainbox.student.dashboard_fragments.LostNFoundFragment;
 import com.brainbox.student.dashboard_fragments.MapsFragment;
 import com.brainbox.student.dashboard_fragments.PayFeeFragment;
 import com.brainbox.student.dashboard_fragments.SettingsFragment;
+import com.brainbox.student.global.BrainBox;
 import com.brainbox.student.ui.CustomTitle;
 
 import butterknife.Bind;
@@ -112,10 +113,13 @@ public class DashboardActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.maps:
-                        MapsFragment mapFragment = new MapsFragment();
-                        fragmentTransaction.replace(R.id.frame, mapFragment);
-                        fragmentTransaction.commit();
-                        getSupportActionBar().setTitle(CustomTitle.getTitle(DashboardActivity.this, getString(R.string.maps)));
+                        if(BrainBox.currentFragment != null && !(BrainBox.currentFragment instanceof MapsFragment))
+                        {
+                            MapsFragment mapFragment = new MapsFragment();
+                            fragmentTransaction.replace(R.id.frame, mapFragment);
+                            fragmentTransaction.commit();
+                            getSupportActionBar().setTitle(CustomTitle.getTitle(DashboardActivity.this, getString(R.string.maps)));
+                        }
                        return true;
 
                     case R.id.feesPayment:
