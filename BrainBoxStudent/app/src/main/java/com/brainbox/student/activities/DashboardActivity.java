@@ -1,6 +1,7 @@
 package com.brainbox.student.activities;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -39,6 +40,8 @@ public class DashboardActivity extends AppCompatActivity {
     @Bind(R.id.drawer)
     DrawerLayout drawerLayout;
     private MenuItem previousMenuItem;
+	private View header;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,12 @@ public class DashboardActivity extends AppCompatActivity {
         headerView.setBackgroundDrawable(bitmapDrawable);
         ((ImageView)headerView.findViewById(R.id.profile_image)).setImageBitmap(icon);
 */
+
+		header = navigationView.getHeaderView(0);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+				header.setPadding(0,150,0,0);
+		}
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
             // This method will trigger on item Click of navigation menu

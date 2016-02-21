@@ -85,7 +85,6 @@ public class TimelineFragment extends Fragment
 				public void onResponse(JSONObject response) {
 					VolleyLog.d(TAG, "Response: " + response.toString());
 					if (response != null) {
-						Toast.makeText(getActivity().getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();
 						parseJsonFeed(response);
 					}
 				}
