@@ -47,7 +47,7 @@ public class TimelineFragment extends Fragment
 	private static final String TAG = TimelineFragment.class.getSimpleName();
 	private TimelineListAdapter listAdapter;
 	private List<TimelineItemDTO> timelineItems;
-	private String URL_FEED = "http://brainboxapp.com/api/Schools/demo";
+	private String URL_FEED = "http://104.236.79.35/api/Schools/demo";
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
